@@ -10,7 +10,7 @@ $ cd build
 $ cmake ..
 $ make -j`nproc`    # Create build
 $ make dist         # Create source distribution
-$ cpack             # Create deb package
+$ make deb          # Create deb package
 ```
 
 ## License
