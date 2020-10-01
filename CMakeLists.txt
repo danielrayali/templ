@@ -38,8 +38,17 @@ file (GLOB templ_sources
     src/*.hpp src/*.cpp
     include/*.hpp
     test/*.hpp test/*.cpp)
-find_program(${PROJECT_NAME}_CLANG_FORMAT_BINARY clang-format)
+find_program(${PROJECT_NAME}_CLANG_FORMAT_BINARY
+    NAMES clang-format
+    REQUIRED)
 add_custom_target (format
     COMMAND ${${PROJECT_NAME}_CLANG_FORMAT_BINARY}
     -i ${templ_sources})
+
+# Add static analyzer support through the "make analyze" target
+find_program (TEMPL_CLANG_TIDY
+    NAMES clang-tidy
+    REQUIRED)
+add_custom_target (analyze
+    COMMAND ${TEMPL_CLANG_TIDY} ${templ_sources})
 
