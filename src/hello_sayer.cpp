@@ -1,18 +1,18 @@
-#include "hello_sayer.h"
+#include "hello_sayer.hpp"
 
 #include <iostream>
 
 using namespace std;
 
 void HelloSayer::SayHello() const {
-    cout << "Hello, World! " << _value << endl;
+    cout << "Hello, World! " << value_m << endl;
 }
 
 void HelloSayer::SetValue(const int value) {
-    _value = value;
+    value_m = value;
 }
 
 int HelloSayer::GetValue() const {
-    return _value;
+    return value_m;
 }
 

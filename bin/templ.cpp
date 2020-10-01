@@ -1,4 +1,4 @@
-#include "hello_sayer.h"
+#include "hello_sayer.hpp"
 
 int main(int argc, char* argv[]) {
     HelloSayer hello_sayer;

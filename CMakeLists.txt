@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.10.2)
+cmake_minimum_required (VERSION 3.16.3)
 
 project (templ)
 
@@ -10,6 +10,7 @@ endif ()
 include_directories (include)
 add_subdirectory (include)
 add_subdirectory (src)
+enable_testing ()
 add_subdirectory (test)
 add_subdirectory (bin)
 
@@ -20,15 +21,14 @@ set(CPACK_PACKAGE_VERSION_MAJOR "0")
 set(CPACK_PACKAGE_VERSION_MINOR "1")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
 set(CPACK_SOURCE_GENERATOR "TBZ2")
-SET(CPACK_GENERATOR "DEB")
-SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Daniel Ali") #required
+set(CPACK_GENERATOR "DEB")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Daniel Ali") #required
 set(CPACK_SOURCE_PACKAGE_FILE_NAME
   "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
 #  "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}-${DEB_PACKAGE_VERSION}_${DEB_PACKAGE_ARCH}")
 set(CPACK_SOURCE_IGNORE_FILES
   "/build/;/.bzr/;~$;${CPACK_SOURCE_IGNORE_FILES}")
 include(CPack)
-
 add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 add_custom_target (deb COMMAND cpack)
 

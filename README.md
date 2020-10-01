@@ -2,6 +2,14 @@
 
 An example/reference project that uses cmake and cpack to create builds, source distributions and debian packages.
 
+## Requirements
+
+On Ubuntu 20.04, you will need to install Google Test. Use the command below:
+
+```
+$ sudo apt install libgtest-dev
+```
+
 ## Build
 
 ```

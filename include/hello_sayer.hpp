@@ -13,6 +13,6 @@ class HelloSayer {
     int GetValue() const;
 
  private:
-    int _value = 0;
+    int value_m = 0;
 };
 

@@ -1,3 +1,5 @@
-add_executable (templ-test test_main.cc)
-target_link_libraries (templ-test LINK_PUBLIC templ-lib pthread)
-
+find_package (GTest REQUIRED)
+include_directories (${GTEST_INCLUDE_DIRS})
+add_executable (templ-test hello_sayer_test.cpp)
+target_link_libraries (templ-test LINK_PUBLIC templ-lib pthread GTest::GTest GTest::Main)
+gtest_discover_tests (templ-test)
