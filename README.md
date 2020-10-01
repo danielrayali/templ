@@ -1,10 +1,10 @@
 # Templ
 
-An example/reference project that runs static analysis, unit tests, source distributions and debian packages.
+An example/reference project that runs style formating, static analysis, unit tests, source distributions and debian packages.
 
 ## Requirements
 
-On Ubuntu 20.04, you will need to install the packages in the command below:
+On Ubuntu 20.04, install the required packages using the command below:
 
 ```
 $ sudo apt install libgtest-dev clang-format clang-tidy
