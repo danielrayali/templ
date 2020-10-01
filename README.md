@@ -16,7 +16,8 @@ $ sudo apt install libgtest-dev
 $ mkdir build
 $ cd build
 $ cmake ..
-$ make -j`nproc`    # Create build
+$ make              # Build code
+$ make test         # Run tests
 $ make dist         # Create source distribution
 $ make deb          # Create deb package
 ```
