@@ -32,3 +32,14 @@ include(CPack)
 add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 add_custom_target (deb COMMAND cpack)
 
+# Add clang-format support through the "make format" target
+file (GLOB templ_sources
+    LIST_DIRECTORIES false
+    src/*.hpp src/*.cpp
+    include/*.hpp
+    test/*.hpp test/*.cpp)
+find_program(${PROJECT_NAME}_CLANG_FORMAT_BINARY clang-format)
+add_custom_target (format
+    COMMAND ${${PROJECT_NAME}_CLANG_FORMAT_BINARY}
+    -i ${templ_sources})
+

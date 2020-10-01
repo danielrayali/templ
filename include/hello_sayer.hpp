@@ -2,17 +2,16 @@
 
 class HelloSayer {
  public:
-    HelloSayer() = default;
+  HelloSayer() = default;
 
-    ~HelloSayer() = default;
+  ~HelloSayer() = default;
 
-    void SayHello() const;
+  void SayHello() const;
 
-    void SetValue(const int value);
+  void SetValue(const int value);
 
-    int GetValue() const;
+  int GetValue() const;
 
  private:
-    int value_m = 0;
+  int value_ = 0;
 };
-

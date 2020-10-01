@@ -5,14 +5,9 @@
 using namespace std;
 
 void HelloSayer::SayHello() const {
-    cout << "Hello, World! " << value_m << endl;
+  cout << "Hello, World! " << value_ << endl;
 }
 
-void HelloSayer::SetValue(const int value) {
-    value_m = value;
-}
+void HelloSayer::SetValue(const int value) { value_ = value; }
 
-int HelloSayer::GetValue() const {
-    return value_m;
-}
-
+int HelloSayer::GetValue() const { return value_; }
